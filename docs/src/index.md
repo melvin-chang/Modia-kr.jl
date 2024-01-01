@@ -1,9 +1,9 @@
 # Modia Documentation
 
-[Modia](https://github.com/ModiaSim/Modia.jl) is an environment in form of a Julia package to model and simulate physical systems (electrical, mechanical, thermo-dynamical, etc.) described by differential and algebraic equations. A user defines a model on a high level with model components (like a mechanical body, an electrical resistance, or a pipe) that are physically connected together. A model component is constructed by **`expression = expression` equations** or by Julia structs/functions, such as the pre-defined [Modia3D] (https://github.com/ModiaSim/Modia3D.jl) multibody components. The defined model is symbolically processed (for example, equations might be analytically differentiated) with algorithms from package [ModiaBase.jl](https://github.com/ModiaSim/ModiaBase.jl). From the transformed model a Julia function is generated that is used to simulate the model with integrators from [DifferentialEquations.jl](https://github.com/SciML/DifferentialEquations.jl).
-The basic type of the floating point variables is usually `Float64`, but can be set to any
-type `FloatType <: AbstractFloat` via `@instantiateModel(..., FloatType = xxx)`, for example
-it can be set to `Float32, DoubleFloat, Measurement{Float64}, StaticParticles{Float64,100}`.
+[Modia](https://github.com/ModiaSim/Modia.jl)는 미분 방정식 및 대수 방정식으로 설명되는 물리 시스템(전기, 기계, 열역학 등)을 모델링하고 시뮬레이션할 수 있는 Julia 패키지 형식의 환경입니다. 사용자는 물리적으로 서로 연결된 모델 컴포넌트(예: 기계 몸체, 전기 저항, 파이프)를 사용하여 상위 수준에서 모델을 정의합니다. 모델 컴포넌트는 **`expression = expression` equations** 또는 사전 정의된 [Modia3D](https://github.com/ModiaSim/Modia3D.jl) 멀티바디 컴포넌트와 같은 줄리아 구조체/함수로 구성됩니다. 정의된 모델은 패키지 [ModiaBase.jl](https://github.com/ModiaSim/ModiaBase.jl)의 알고리즘을 사용하여 기호적으로 처리됩니다(예: 방정식을 분석적으로 미분할 수 있음). 변환된 모델에서 [DifferentialEquations.jl](https://github.com/SciML/DifferentialEquations.jl)의 적분기로 모델을 시뮬레이션하는 데 사용되는 줄리아 함수가 생성됩니다.
+부동 소수점 변수의 기본 유형은 일반적으로 `Float64`이지만, 어떤 유형으로든 설정할 수 있습니다.
+유형 `FloatType <: AbstractFloat`로 설정할 수 있습니다(예: `@instantiateModel(..., FloatType = xxx)`).
+예를 들어 `Float32, DoubleFloat, Measurement{Float64}, StaticParticles{Float64,100}`로 설정할 수 있습니다.
 
 
 ## Installation
